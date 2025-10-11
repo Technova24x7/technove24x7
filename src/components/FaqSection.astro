@@ -1,0 +1,25 @@
+---
+const faqs = await Astro.glob('/src/content/faqs/*.md');
+---
+
+<section id="faq" class="py-20 bg-gray-50 text-center">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12 text-gray-900">Frequently Asked Questions</h2>
+
+    <div class="space-y-4 text-left">
+      {faqs.map(({ Content, frontmatter }, index) => (
+        <details class="border rounded-xl p-6 bg-white shadow-sm" key={index}>
+          <summary class="cursor-pointer font-medium text-gray-800 flex justify-between items-center">
+            {frontmatter.title}
+            <svg class="ml-2 w-5 h-5 text-blue-600 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </summary>
+          <div class="mt-4 text-gray-700">
+            <Content />
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
