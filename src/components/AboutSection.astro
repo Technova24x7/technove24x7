@@ -1,38 +1,45 @@
-<section id="about" class="py-20 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-6 text-center md:text-left">
-    <div class="md:flex md:items-center md:space-x-10">
-      <!-- Image -->
-      <div class="md:w-1/2 mb-10 md:mb-0">
-        <img
-          src="/images/about-section-image.jpg"
-          alt="Our Team"
-          class="rounded-2xl shadow-lg w-full object-cover"
-        />
-      </div>
+<section id="about" class="relative py-20 bg-gray-50 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+    <!-- Image Section -->
+    <div class="md:w-1/2 relative group">
+      <div class="absolute inset-0 rounded-3xl bg-blue-100 blur-3xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
+      <img
+        src="/images/about-section-image.jpg"
+        alt="Our Team"
+        class="relative rounded-3xl shadow-lg w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
+    </div>
 
-      <!-- Content -->
-      <div class="md:w-1/2">
-        <h2 class="text-4xl font-bold text-gray-900 mb-6">
-          Empowering Businesses with Complete Digital Solutions
-        </h2>
-        <p class="text-gray-700 text-lg leading-relaxed mb-6">
-          At <span class="font-semibold text-blue-600">Technove24</span>, we are a software solutions company dedicated to helping businesses grow and succeed in the digital age. We build <span class="font-medium">static, dynamic, and e-commerce websites</span> that perfectly align with your brand and business goals.
-        </p>
-        <p class="text-gray-700 text-lg leading-relaxed mb-6">
-          Beyond development, we provide <span class="font-medium">digital marketing services</span> that boost visibility and engagement—ensuring your business thrives online. From creating your online presence to managing your digital campaigns, we cover every aspect of your digital journey.
-        </p>
-        <p class="text-gray-700 text-lg leading-relaxed">
-          Whether you’re just starting or scaling up, Technove24 helps you get ready for your next digital endeavour with smart, result-driven solutions.
-        </p>
+    <!-- Text Section -->
+    <div class="md:w-1/2 space-y-5">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-snug">
+        Empowering Businesses with <span class="text-blue-600">Complete Digital Solutions</span>
+      </h2>
 
-        <div class="mt-8">
-          <a
-            href="#services"
-            class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
-          >
-            Explore Our Services
-          </a>
-        </div>
+      <p class="text-gray-700 text-base leading-relaxed">
+        At <span class="font-semibold text-blue-600">Technove24</span>, we help businesses grow and succeed in the digital era with innovative and scalable technology. 
+        Our expertise includes <span class="font-medium">static, dynamic, and e-commerce website development</span> tailored to your brand’s goals and vision.
+      </p>
+
+      <p class="text-gray-700 text-base leading-relaxed">
+        Beyond development, we offer <span class="font-medium">digital marketing strategies</span> to boost visibility and engagement, ensuring your business stands out online. 
+        From launching your online presence to optimizing growth, we handle every step of your digital journey.
+      </p>
+
+      <p class="text-gray-700 text-base leading-relaxed">
+        Whether you’re starting fresh or scaling up, Technove24 helps you reach the next level with <span class="font-medium">smart, result-driven solutions</span> that deliver.
+      </p>
+
+      <div class="pt-4">
+        <a
+          href="#services"
+          class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium shadow hover:shadow-lg hover:bg-blue-700 transition-all duration-300"
+        >
+          Explore Our Services
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
     </div>
   </div>
