@@ -1,14 +1,12 @@
-// @ts-check
+// astro.config.mjs
 import { defineConfig } from 'astro/config';
-
 import tailwindcss from '@tailwindcss/vite';
 
-// https://astro.build/config
 export default defineConfig({
+  site: 'https://www.technove24.com',
+  base: '/technove24x7/', // this ensures all asset paths include the repo path
+  outDir: 'dist',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
-  site: 'https://Technova24x7.github.io/com.technova24/',
-  base: '/com.technova24/',
-  outDir:'./docs',
 });
