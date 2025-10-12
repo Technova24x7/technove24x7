@@ -1,3 +1,6 @@
+---
+import {siteInfo} from "../data/siteinfo";
+---
 <footer class="bg-gray-900 text-gray-200 py-12">
   <div class="max-w-6xl mx-auto px-6 md:flex md:justify-between md:items-start space-y-8 md:space-y-0">
     
@@ -36,9 +39,9 @@
     <!-- Contact -->
     <div class="md:w-1/3">
       <h4 class="font-semibold mb-4 text-white">Contact Us</h4>
-      <p class="text-gray-400">123 Digital Street, City, Country</p>
-      <p class="text-gray-400">Email: info@technove24.com</p>
-      <p class="text-gray-400">Phone: +91 12345 67890</p>
+      <p class="text-gray-400">{siteInfo.address}</p>
+      <p class="text-gray-400">Email: {siteInfo.email}</p>
+      <p class="text-gray-400">Phone: {siteInfo.phone}</p>
 
       <!-- Social Media -->
       <div class="flex space-x-4 mt-4">

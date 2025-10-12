@@ -1,4 +1,5 @@
 ---
-title: "What about domain name and hosting ?"
+title: "Do you provide ongoing support and maintenance?"
 ---
-Our plans include the cost of domain name and hosting.
+
+Yes! We provide **one year of free support** with every project. After that, you can choose a **monthly or yearly maintenance plan** to keep your site updated, secure, and optimized.
