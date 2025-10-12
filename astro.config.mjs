@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.technove24.com',
-  base: '/technove24x7/', // this ensures all asset paths include the repo path
+  base: '/', // this ensures all asset paths include the repo path
   outDir: 'dist',
   vite: {
     plugins: [tailwindcss()],
