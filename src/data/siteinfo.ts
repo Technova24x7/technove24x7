@@ -4,7 +4,7 @@ export const siteInfo = {
   email: "technova24x7@gmail.com",
   phone: "+91 9416199025",
   address: "Near sunder hospital sector 7 kurukshetra",
-  whatsapp: "+91 9416199025",
+  whatsapp: "919416199025",
   website: "https://technove24.com",
   social: {
     facebook: "https://facebook.com/technova24x7",
