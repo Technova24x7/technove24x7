@@ -19,7 +19,10 @@ import { siteInfo } from '../data/siteinfo.ts';
 
     <div class="grid md:grid-cols-3 gap-10">
       <!-- Email -->
-      <div class="bg-white/70 backdrop-blur-lg rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+      <a
+        href={`mailto:${siteInfo.email}`}
+        class="bg-white/70 backdrop-blur-lg rounded-2xl p-8 shadow-md hover:shadow-xl transition block hover:scale-105"
+      >
         <div class="flex flex-col items-center">
           <div class="bg-blue-100 p-4 rounded-full mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,14 +30,15 @@ import { siteInfo } from '../data/siteinfo.ts';
             </svg>
           </div>
           <h3 class="font-semibold text-lg text-gray-900 mb-2">Email Us</h3>
-          <a href={`mailto:${siteInfo.email}`} class="text-blue-600 hover:underline">
-            {siteInfo.email}
-          </a>
+          <p class="text-blue-600">{siteInfo.email}</p>
         </div>
-      </div>
+      </a>
 
       <!-- Phone -->
-      <div class="bg-white/70 backdrop-blur-lg rounded-2xl p-8 shadow-md hover:shadow-xl transition">
+      <a
+        href={`tel:${siteInfo.phone}`}
+        class="bg-white/70 backdrop-blur-lg rounded-2xl p-8 shadow-md hover:shadow-xl transition block hover:scale-105"
+      >
         <div class="flex flex-col items-center">
           <div class="bg-green-100 p-4 rounded-full mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,35 +47,41 @@ import { siteInfo } from '../data/siteinfo.ts';
             </svg>
           </div>
           <h3 class="font-semibold text-lg text-gray-900 mb-2">Call Us</h3>
-          <a href={`tel:${siteInfo.phone}`} class="text-green-600 hover:underline">
-            {siteInfo.phone}
-          </a>
+          <p class="text-green-600">{siteInfo.phone}</p>
         </div>
-      </div>
+      </a>
 
       <!-- Address -->
-      <div class="bg-white/70 backdrop-blur-lg rounded-2xl p-8 shadow-md hover:shadow-xl transition">
-        <div class="flex flex-col items-center">
-          <div class="bg-purple-100 p-4 rounded-full mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M19.428 15.341A8 8 0 104.572 15.34L12 21l7.428-5.659z" />
-            </svg>
-          </div>
-          <h3 class="font-semibold text-lg text-gray-900 mb-2">Visit Us</h3>
-          <p class="text-gray-700 text-sm">{siteInfo.address}</p>
-        </div>
-      </div>
-    </div>
+<a 
+  href="https://www.google.com/maps?q=TechNova24,+Kurukshetra,+Haryana" 
+  target="_blank"
+  rel="noopener noreferrer"
+  class="bg-white/70 backdrop-blur-lg rounded-2xl p-8 shadow-md hover:shadow-xl transition flex flex-col items-center hover:scale-105"
+>
+  <div class="bg-purple-100 p-4 rounded-full mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M19.428 15.341A8 8 0 104.572 15.34L12 21l7.428-5.659z" />
+    </svg>
+  </div>
+  <h3 class="font-semibold text-lg text-gray-900 mb-2">Visit Us</h3>
+  <p class="text-gray-700 text-sm text-center">
+    {siteInfo.address}
+  </p>
+</a>
+
 
     <!-- Google Map -->
     <div class="mt-16 h-72 w-full rounded-2xl overflow-hidden shadow-md">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.4879045025514!2d76.8706435!3d29.9654052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e47f5c2a38165%3A0x29e3803b11dd7a00!2sTechNova24!5e0!3m2!1sen!2sin!4v1760612072845!5m2!1sen!2sin" 
-      width="100%"
-        height="100%" style="border:0;" allowfullscreen="" 
-      loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.4879045025514!2d76.8706435!3d29.9654052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e47f5c2a38165%3A0x29e3803b11dd7a00!2sTechNova24!5e0!3m2!1sen!2sin!4v1760612072845!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
   </div>
 
