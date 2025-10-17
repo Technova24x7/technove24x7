@@ -1,91 +1,123 @@
+---
+import { siteInfo } from '../data/siteinfo.ts';
+
+const pricing = [
+  {
+    name: "Basic",
+    description: "Perfect for small businesses getting started online.",
+    monthly: "₹1,200",
+    yearly: "₹12,000",
+    features: [
+      "Static Website (up to 5 pages)",
+      "Mobile-friendly Design",
+      "SEO Setup",
+      "1 Year Support",
+    ],
+    button: "Get Started",
+    popular: false,
+  },
+  {
+    name: "Professional",
+    description: "Best for growing businesses that need flexibility and performance.",
+    monthly: "₹2,499",
+    yearly: "₹23,999",
+    features: [
+      "Dynamic or E-commerce Website",
+      "Payment Gateway Integration",
+      "Advanced SEO + Analytics",
+      "Priority Support",
+    ],
+    button: "Choose Plan",
+    popular: true,
+  },
+  {
+    name: "Enterprise",
+    description: "Custom software and digital transformation for your business.",
+    monthly: "₹8,500",
+    yearly: "₹90000",
+    features: [
+      "ERP, CRM, POS Systems",
+      "Mobile App Development",
+      "Marketing & Branding Support",
+      "Dedicated Account Manager",
+    ],
+    button: "Request Quote",
+    popular: false,
+  },
+];
+---
+
 <section id="pricing" class="py-20 bg-gray-50 text-center">
   <h2 class="text-3xl font-bold mb-6 text-gray-900">Our Pricing</h2>
-  <p class="text-gray-600 mb-10">Choose a plan that fits your business — pay monthly or save more with yearly billing.</p>
+  <p class="text-gray-600 mb-10">
+    Choose a plan that fits your business — pay monthly or save more with yearly billing.
+  </p>
 
   <!-- Toggle Switch -->
   <div class="flex items-center justify-center mb-12 space-x-4">
     <span class="text-gray-700 font-medium">Monthly</span>
     <label class="relative inline-flex items-center cursor-pointer">
-      <input type="checkbox" id="billing-toggle" class="sr-only peer">
+      <input type="checkbox" id="billing-toggle" class="sr-only peer" />
       <div class="w-16 h-8 bg-gray-300 rounded-full peer-focus:ring-2 peer-focus:ring-emerald-400 transition-colors peer-checked:bg-emerald-500"></div>
       <div class="absolute top-1 left-1 bg-white w-6 h-6 rounded-full shadow-md transition-all duration-300 peer-checked:translate-x-8"></div>
     </label>
-    <span class="text-gray-700 font-medium">Yearly <span class="text-emerald-600 text-sm">(Save 20%)</span></span>
+    <span id="billing-label" class="text-gray-700 font-medium">
+      Yearly <span class="text-emerald-600 text-sm">(Save 20%)</span>
+    </span>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-8 px-8 max-w-6xl mx-auto transition-all duration-500" id="pricing-cards">
-    <!-- Basic Plan -->
-    <div class="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-      <h3 class="text-2xl font-semibold mb-4 text-emerald-600">Basic</h3>
-      <p class="text-gray-600 mb-6">Perfect for small businesses getting started online.</p>
+  <div id="pricing-cards" class="grid md:grid-cols-3 gap-8 px-8 max-w-6xl mx-auto transition-all duration-500">
+    {pricing.map((plan) => (
+      <div
+        class={`relative p-8 bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 ${
+          plan.popular ? 'border-2 border-emerald-600 shadow-md scale-105' : 'border border-gray-200'
+        }`}
+      >
+        {plan.popular && (
+          <span class="absolute top-0 right-0 bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg">
+            Most Popular
+          </span>
+        )}
 
-      <p class="text-4xl font-bold mb-6 text-gray-900 transition-all duration-300">
-        <span class="price-monthly">₹1,200</span>
-        <span class="price-yearly hidden">₹11,500</span>
-        <span class="text-base text-gray-500 font-normal"> / month</span>
-      </p>
+        <h3 class="text-2xl font-semibold mb-4 text-emerald-600">{plan.name}</h3>
+        <p class="text-gray-600 mb-6">{plan.description}</p>
 
-      <ul class="text-gray-700 space-y-2 mb-6">
-        <li>✔ Static Website (up to 5 pages)</li>
-        <li>✔ Mobile-friendly Design</li>
-        <li>✔ SEO Setup</li>
-        <li>✔ 1 Year Support</li>
-      </ul>
-      <a href="#contact" class="inline-block px-6 py-2 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all duration-300">Get Started</a>
-    </div>
+        <p class="text-4xl font-bold mb-6 text-gray-900 transition-all duration-300">
+          <span class="price-monthly">{plan.monthly}</span>
+          <span class="price-yearly hidden">{plan.yearly}</span>
+          <span class="price-label text-base text-gray-500 font-normal">/ month</span>
+        </p>
 
-    <!-- Professional Plan (Highlighted) -->
-    <div class="relative p-8 bg-white border-2 border-emerald-600 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 scale-105 hover:-translate-y-2">
-      <span class="absolute top-0 right-0 bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-bl-lg">Most Popular</span>
-      <h3 class="text-2xl font-semibold mb-4 text-emerald-600">Professional</h3>
-      <p class="text-gray-600 mb-6">Best for growing businesses that need flexibility and performance.</p>
+        <ul class="text-gray-700 space-y-2 mb-6">
+          {plan.features.map((f) => (
+            <li>✔ {f}</li>
+          ))}
+        </ul>
 
-      <p class="text-4xl font-bold mb-6 text-gray-900 transition-all duration-300">
-        <span class="price-monthly">₹2,499</span>
-        <span class="price-yearly hidden">₹23,999</span>
-        <span class="text-base text-gray-500 font-normal"> / month</span>
-      </p>
-
-      <ul class="text-gray-700 space-y-2 mb-6">
-        <li>✔ Dynamic or E-commerce Website</li>
-        <li>✔ Payment Gateway Integration</li>
-        <li>✔ Advanced SEO + Analytics</li>
-        <li>✔ Priority Support</li>
-      </ul>
-      <a href="#contact" class="inline-block px-6 py-2 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all duration-300">Choose Plan</a>
-    </div>
-
-    <!-- Enterprise Plan -->
-    <div class="p-8 bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-      <h3 class="text-2xl font-semibold mb-4 text-emerald-600">Enterprise</h3>
-      <p class="text-gray-600 mb-6">Custom software and digital transformation for your business.</p>
-
-      <p class="text-4xl font-bold mb-6 text-gray-900 transition-all duration-300">
-        <span class="price-monthly">₹9,999</span>
-        <span class="price-yearly hidden">₹99,999</span>
-        <span class="text-base text-gray-500 font-normal"> / month</span>
-      </p>
-
-      <ul class="text-gray-700 space-y-2 mb-6">
-        <li>✔ ERP, CRM, POS Systems</li>
-        <li>✔ Mobile App Development</li>
-        <li>✔ Marketing & Branding Support</li>
-        <li>✔ Dedicated Account Manager</li>
-      </ul>
-      <a href="#contact" class="inline-block px-6 py-2 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all duration-300">Request Quote</a>
-    </div>
+        <a
+          href={`https://wa.me/${siteInfo.whatsapp}?text=Hi%20I%20would%20like%20to%20know%20more%20about%20your%20services`}
+          class="inline-block px-6 py-2 rounded-lg bg-emerald-600 text-white font-medium hover:bg-emerald-700 transition-all duration-300"
+        >
+          {plan.button}
+        </a>
+      </div>
+    ))}
   </div>
 </section>
 
 <script>
-  // Smooth monthly/yearly toggle
-  document.getElementById('billing-toggle').addEventListener('change', function () {
-    const monthlyPrices = document.querySelectorAll('.price-monthly');
-    const yearlyPrices = document.querySelectorAll('.price-yearly');
+  const toggle = document.getElementById("billing-toggle");
+  const label = document.getElementById("billing-label");
+
+  toggle?.addEventListener("change", function () {
+    const monthlyPrices = document.querySelectorAll(".price-monthly");
+    const yearlyPrices = document.querySelectorAll(".price-yearly");
+    const priceLabels = document.querySelectorAll(".price-label");
 
     monthlyPrices.forEach((m, i) => {
-      m.classList.toggle('hidden', this.checked);
-      yearlyPrices[i].classList.toggle('hidden', !this.checked);
+      m.classList.toggle("hidden", this.checked);
+      yearlyPrices[i].classList.toggle("hidden", !this.checked);
+      priceLabels[i].textContent = this.checked ? "/ annually" : "/ month";
     });
   });
 </script>

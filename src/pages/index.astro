@@ -4,12 +4,13 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import HeroSection from "../components/HeroSection.astro";
 import ServiceSection from "../components/ServiceSection.astro";
-import PortfolioSection from "../components/PortfolioSection.astro";
+import PortfolioImageGallery from "../components/PortfolioImageGallery.astro";
 import ContactSection from "../components/ContactSection.astro";
 import AboutSection from "../components/AboutSection.astro";
 import PriceSection from "../components/PriceSection.astro";
 import FaqSection from "../components/FaqSection.astro";
 import FooterSection from "../components/FooterSection.astro";
+import ProjectCounterSection from "../components/ProjectCounterSection.astro";
 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -19,9 +20,11 @@ import FooterSection from "../components/FooterSection.astro";
 <Layout>
   <Navbar />
   <HeroSection />
+    <ProjectCounterSection />
+
   <AboutSection />
   <ServiceSection />
-  <PortfolioSection />
+  <PortfolioImageGallery />
   <PriceSection />
   <FaqSection />
   <ContactSection />
